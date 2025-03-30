@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+header {
+  padding: 10px 0;
+}
+
+.search_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.search_box > input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search_box > button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 150ms ease-in-out;
+}
+
+.search_box > button:hover {
+  background-color: #218838;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: 20px;
+  padding: 25px;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(128, 128, 128, 0.43);
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0px 2px 5px 0px rgba(202, 202, 202, 0.6);
+}
+
+.card .img_box {
+  width: 218px;
+  height: 218px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .img_box > img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.rating {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+
+.rating .stars .star {
+  font-size: x-large;
+  color: gray;
+}
+
+.rating .stars .star:before {
+  content:'\2605';
+}
+
+.rating .stars .star.on {
+  color: gold;
+}
+
+.rating .stars .star.half:after {
+  content:'\2605';
+  color: gold;
+  position: absolute;
+  margin-left: -20px;
+  width: 10px;
+  overflow: hidden;
+}
+
+.rating .reviews {
+  padding-top: 3px;
+}
+
+.card > h2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  font-size: .9em;
+  line-height: 1.45;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+p.error {
+  font-size: .875em;
+  color: #E70000;
+  margin: 4px;
+}
+
+@media (max-width: 1024px) {
+  .results {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 524px) {
+  .results {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
