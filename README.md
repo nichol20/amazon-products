@@ -28,7 +28,6 @@ Follow these steps to get the project running locally:
 Navigate to the `server` folder and install dependencies:
 
 ```bash
-cd server
 bun install
 ```
 
@@ -43,7 +42,6 @@ bun run start
 Navigate to the `client` folder and install dependencies:
 
 ```bash
-cd ../client
 npm install
 ```
 
