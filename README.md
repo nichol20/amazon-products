@@ -10,7 +10,7 @@ A simple API that scrapes data from an Amazon search page and a frontend to sear
 
 - 🔍 Scrapes product data from Amazon search results  
 - ⚡ Fast and lightweight backend powered by [Bun](https://bun.sh/)  
-- 🎨 Simple and intuitive frontend built with [React](https://react.dev/)  
+- 🎨 Simple and intuitive frontend built with [Vite](https://vite.dev/)  
 
 ## 📦 Requirements
 
