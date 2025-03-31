@@ -2,6 +2,8 @@
 
 A simple API that scrapes data from an Amazon search page and a frontend to search and view the extracted data.
 
+This project was built for a challenge.
+
 ## 🚀 Preview
 
 ![Preview](./images/amazon-products-preview.png)
