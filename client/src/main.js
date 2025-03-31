@@ -22,12 +22,15 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+        // Prevent multiple searches at the same time
         if(isSearching) return
 
         contentEl.innerHTML = "<p>Scraping data...</p>";
 
         try {
             isSearching = true
+
+            // Fetch scraped data from the backend API
             const response = await fetch(
                 `http://localhost:3000/api/scrape?keyword=${encodeURIComponent(keyword)}`,
                 {
@@ -47,7 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function displayResults(products) {
-        contentEl.innerHTML = "";
+        contentEl.innerHTML = ""; // Clear previous results
+
+        // If no products found, show a message
         if (products.length === 0) {
             contentEl.innerHTML = "<p>No results found.</p>";
             return;
@@ -62,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         contentEl.appendChild(resultsDivEl);
     }
 
+    // Function to create an individual product card
     function createCardElement(product) {
         return `
             <div class="card">
@@ -82,9 +88,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function createStarElements(rating) {
         let stars = ""
         for(let i = 0; i < 5; i++) {
-            if(rating >= 1) stars += '<span class="star on"></span>';
-            else if (rating > 0) stars += '<span class="star half"></span>';
-            else stars += '<span class="star"></span>';
+            if(rating >= 1) stars += '<span class="star on"></span>'; // Full star
+            else if (rating > 0) stars += '<span class="star half"></span>'; // Half star
+            else stars += '<span class="star"></span>'; // Empty star
             rating--;
         }
         return stars
